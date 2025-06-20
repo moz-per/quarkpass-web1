@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, ArrowLeft, AlertTriangle, CheckCircle } from "lucide-react";
+import { Atom, ArrowLeft, AlertTriangle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PasswordChecker = () => {
@@ -60,8 +60,8 @@ const PasswordChecker = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-cyan-400" />
-            <span className="text-2xl font-bold text-white">QuantumShield</span>
+            <Atom className="h-8 w-8 text-cyan-400" />
+            <span className="text-2xl font-bold text-white">QuarkPass</span>
           </Link>
           <Link to="/">
             <Button variant="outline" className="text-white border-cyan-400 hover:bg-cyan-400 hover:text-slate-900">
