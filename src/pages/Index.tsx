@@ -191,10 +191,14 @@ const Index = () => {
                   </Link>
                 </li>
                 <li>
-                  <span className="text-slate-400">Entropy Calculator</span>
+                  <Link to="/entropy-calculator" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    Entropy Calculator
+                  </Link>
                 </li>
                 <li>
-                  <span className="text-slate-400">Risk Assessment</span>
+                  <Link to="/risk-assessment" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    Risk Assessment
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -209,7 +213,9 @@ const Index = () => {
                   </Link>
                 </li>
                 <li>
-                  <span className="text-slate-400">Quantum-Safe Algorithms</span>
+                  <Link to="/quantum-algorithms" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    Quantum-Safe Algorithms
+                  </Link>
                 </li>
                 <li>
                   <span className="text-slate-400">Custom Parameters</span>
@@ -227,10 +233,14 @@ const Index = () => {
                   </Link>
                 </li>
                 <li>
-                  <span className="text-slate-400">Quantum Computing Info</span>
+                  <Link to="/quantum-info" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    Quantum Computing Info
+                  </Link>
                 </li>
                 <li>
-                  <span className="text-slate-400">Security Best Practices</span>
+                  <Link to="/security-practices" className="text-slate-400 hover:text-cyan-400 transition-colors">
+                    Security Best Practices
+                  </Link>
                 </li>
               </ul>
             </div>
