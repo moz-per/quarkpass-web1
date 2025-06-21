@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { X, Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// TypeScript declaration for gtag
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
 
@@ -20,8 +27,8 @@ const CookieConsent = () => {
     setShowBanner(false);
     
     // Enable tracking after consent
-    if (typeof gtag !== 'undefined') {
-      gtag('consent', 'update', {
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('consent', 'update', {
         'analytics_storage': 'granted'
       });
     }
@@ -32,8 +39,8 @@ const CookieConsent = () => {
     setShowBanner(false);
     
     // Disable tracking
-    if (typeof gtag !== 'undefined') {
-      gtag('consent', 'update', {
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('consent', 'update', {
         'analytics_storage': 'denied'
       });
     }
