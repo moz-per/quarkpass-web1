@@ -1,14 +1,34 @@
-User-agent: Googlebot
+
+User-agent: *
 Allow: /
 
+# Sitemap location
+Sitemap: https://quarkpass.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-User-agent: facebookexternalhit
-Allow: /
+# Block common unwanted bots
+User-agent: AhrefsBot
+Disallow: /
 
-User-agent: *
-Allow: /
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

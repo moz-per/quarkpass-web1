@@ -3,18 +3,40 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Lock, Zap, Atom, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
+  useSEO({
+    title: "QuarkPass - Quantum-Safe Password Security | Protect Against Future Threats",
+    description: "Protect yourself from quantum computing threats with QuarkPass. Generate quantum-resistant passwords, check password strength, and learn about post-quantum cryptography security.",
+    keywords: "quantum-safe passwords, password security, quantum computing threats, post-quantum cryptography, password generator, cybersecurity, quantum resistance",
+    ogTitle: "QuarkPass - Quantum-Safe Password Security",
+    ogDescription: "Advanced password security tools designed to protect against quantum computing threats. Generate quantum-resistant passwords and analyze your current security.",
+    canonicalUrl: "https://quarkpass.com/",
+    schemaData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "QuarkPass - Quantum-Safe Password Security",
+      "description": "Quantum-safe password security platform with advanced tools for protection against quantum computing threats",
+      "url": "https://quarkpass.com/",
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "QuarkPass Security Tools",
+        "applicationCategory": "SecurityApplication"
+      }
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Navigation */}
-      <nav className="container mx-auto px-4 sm:px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-4" role="navigation" aria-label="Main navigation">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Atom className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" />
+            <Atom className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" aria-hidden="true" />
             <span className="text-xl sm:text-2xl font-bold text-white">QuarkPass</span>
           </div>
-          <Link to="/faq">
+          <Link to="/faq" aria-label="View frequently asked questions">
             <Button variant="outline" className="text-black bg-white border-cyan-400 hover:bg-cyan-400 hover:text-slate-900 text-sm sm:text-base">
               FAQ
             </Button>
@@ -23,7 +45,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
+      <header className="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -38,27 +60,27 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-4">
-            <Link to="/checker">
+            <Link to="/checker" aria-label="Check your password strength against quantum threats">
               <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg h-auto">
-                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                 Check Password Strength
               </Button>
             </Link>
-            <Link to="/generator">
+            <Link to="/generator" aria-label="Generate a quantum-safe password">
               <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg h-auto">
-                <Zap className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <Zap className="mr-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                 Generate Quantum-Safe Password
               </Button>
             </Link>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 border-t border-slate-700">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 border-t border-slate-700" aria-labelledby="features-heading">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 id="features-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Comprehensive Quantum Security
             </h2>
             <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto px-4">
@@ -67,56 +89,56 @@ const Index = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-cyan-400 transition-colors">
-              <Shield className="h-12 w-12 sm:h-16 sm:w-16 text-cyan-400 mx-auto mb-6" />
+            <article className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-cyan-400 transition-colors">
+              <Shield className="h-12 w-12 sm:h-16 sm:w-16 text-cyan-400 mx-auto mb-6" aria-hidden="true" />
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 text-center">Quantum Analysis</h3>
               <p className="text-slate-300 text-center mb-6 text-sm sm:text-base">
                 Advanced algorithms assess your password's vulnerability to quantum computing attacks using entropy calculations and resistance metrics.
               </p>
-              <Link to="/checker" className="block">
+              <Link to="/checker" className="block" aria-label="Analyze password security">
                 <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-sm sm:text-base">
                   Analyze Password
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Button>
               </Link>
-            </div>
+            </article>
 
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-purple-400 transition-colors">
-              <Lock className="h-12 w-12 sm:h-16 sm:w-16 text-purple-400 mx-auto mb-6" />
+            <article className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-purple-400 transition-colors">
+              <Lock className="h-12 w-12 sm:h-16 sm:w-16 text-purple-400 mx-auto mb-6" aria-hidden="true" />
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 text-center">Secure Generation</h3>
               <p className="text-slate-300 text-center mb-6 text-sm sm:text-base">
                 Create passwords designed to withstand both classical and quantum computing threats with cryptographically secure randomness.
               </p>
-              <Link to="/generator" className="block">
+              <Link to="/generator" className="block" aria-label="Generate secure password">
                 <Button className="w-full bg-purple-500 hover:bg-purple-600 text-sm sm:text-base">
                   Generate Password
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Button>
               </Link>
-            </div>
+            </article>
 
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-yellow-400 transition-colors sm:col-span-2 lg:col-span-1">
-              <Zap className="h-12 w-12 sm:h-16 sm:w-16 text-yellow-400 mx-auto mb-6" />
+            <article className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-slate-700 hover:border-yellow-400 transition-colors sm:col-span-2 lg:col-span-1">
+              <Zap className="h-12 w-12 sm:h-16 sm:w-16 text-yellow-400 mx-auto mb-6" aria-hidden="true" />
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 text-center">Future-Proof Security</h3>
               <p className="text-slate-300 text-center mb-6 text-sm sm:text-base">
                 Stay ahead of the quantum revolution with next-generation password protection that evolves with emerging threats.
               </p>
-              <Link to="/faq" className="block">
+              <Link to="/faq" className="block" aria-label="Learn more about quantum security">
                 <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 text-sm sm:text-base">
                   Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Button>
               </Link>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* FAQ Preview Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 border-t border-slate-700">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 border-t border-slate-700" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg sm:text-xl text-slate-300 px-4">
@@ -155,10 +177,10 @@ const Index = () => {
             </Accordion>
 
             <div className="text-center mt-8">
-              <Link to="/faq">
+              <Link to="/faq" aria-label="View all frequently asked questions">
                 <Button size="lg" variant="outline" className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 text-sm sm:text-base">
                   View All FAQs
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                 </Button>
               </Link>
             </div>
@@ -167,13 +189,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800/50 border-t border-slate-700 mt-12 sm:mt-20">
+      <footer className="bg-slate-800/50 border-t border-slate-700 mt-12 sm:mt-20" role="contentinfo">
         <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Brand */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <Atom className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" />
+                <Atom className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" aria-hidden="true" />
                 <span className="text-xl sm:text-2xl font-bold text-white">QuarkPass</span>
               </div>
               <p className="text-slate-400 text-sm sm:text-base">

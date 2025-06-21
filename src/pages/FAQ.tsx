@@ -1,14 +1,51 @@
-
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Atom, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
 const FAQ = () => {
+  useSEO({
+    title: "FAQ - Quantum Computing & Password Security | QuarkPass",
+    description: "Get answers to frequently asked questions about quantum computing threats, quantum-safe passwords, and post-quantum cryptography security measures.",
+    keywords: "quantum computing FAQ, password security questions, post-quantum cryptography, quantum threats, cybersecurity FAQ",
+    canonicalUrl: "https://quarkpass.com/faq",
+    schemaData: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Quantum Computing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quantum computing is a revolutionary computing paradigm that uses quantum mechanical phenomena like superposition and entanglement to process information."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "How do quantum computers threaten current password security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quantum computers can break current encryption methods through algorithms like Shor's algorithm, which can efficiently factor large numbers and solve discrete logarithm problems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When will quantum computers pose a real threat?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "Experts estimate that cryptographically relevant quantum computers could emerge within 10-20 years."
+          }
+        }
+      ]
+    }
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Navigation */}
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-4" role="navigation" aria-label="Main navigation">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <Atom className="h-8 w-8 text-cyan-400" />
@@ -24,21 +61,21 @@ const FAQ = () => {
       </nav>
 
       {/* FAQ Content */}
-      <div className="container mx-auto px-6 py-12">
+      <main className="container mx-auto px-4 sm:px-6 py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-white mb-4">
+          <header className="text-center mb-12">
+            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
               Quantum Computing & 
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                 Cybersecurity FAQ
               </span>
             </h1>
-            <p className="text-xl text-slate-300">
+            <p className="text-lg sm:text-xl text-slate-300">
               Everything you need to know about the quantum threat to password security
             </p>
-          </div>
+          </header>
 
-          <div className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+          <section className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 sm:p-8 border border-slate-700">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="what-is-quantum-computing" className="border-slate-600">
                 <AccordionTrigger className="text-white hover:text-cyan-400">
@@ -112,17 +149,17 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
+          </section>
 
           <div className="text-center mt-12">
-            <Link to="/">
+            <Link to="/" aria-label="Try our quantum-safe security tools">
               <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white">
                 Try Our Quantum-Safe Tools
               </Button>
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
