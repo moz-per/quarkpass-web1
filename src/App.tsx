@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CookieConsent from "@/components/CookieConsent";
 import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import PasswordChecker from "./pages/PasswordChecker";
@@ -13,6 +14,7 @@ import RiskAssessment from "./pages/RiskAssessment";
 import QuantumAlgorithms from "./pages/QuantumAlgorithms";
 import QuantumInfo from "./pages/QuantumInfo";
 import SecurityPractices from "./pages/SecurityPractices";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,9 +35,11 @@ const App = () => (
           <Route path="/quantum-algorithms" element={<QuantumAlgorithms />} />
           <Route path="/quantum-info" element={<QuantumInfo />} />
           <Route path="/security-practices" element={<SecurityPractices />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

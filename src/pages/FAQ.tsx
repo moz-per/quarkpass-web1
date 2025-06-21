@@ -1,14 +1,12 @@
-import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Atom, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 import { useSEO } from "@/hooks/useSEO";
 
 const FAQ = () => {
   useSEO({
-    title: "FAQ - Quantum Computing & Password Security | QuarkPass",
-    description: "Get answers to frequently asked questions about quantum computing threats, quantum-safe passwords, and post-quantum cryptography security measures.",
-    keywords: "quantum computing FAQ, password security questions, post-quantum cryptography, quantum threats, cybersecurity FAQ",
+    title: "FAQ - QuarkPass | Quantum Computing & Password Security Questions",
+    description: "Get answers to frequently asked questions about quantum computing threats, quantum-safe passwords, and how QuarkPass protects your digital security.",
+    keywords: "quantum computing FAQ, password security questions, quantum threats, post-quantum cryptography",
     canonicalUrl: "https://quarkpass.com/faq",
     schemaData: {
       "@context": "https://schema.org",
@@ -16,26 +14,10 @@ const FAQ = () => {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is Quantum Computing?",
+          "name": "What is the quantum threat to passwords?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum computing is a revolutionary computing paradigm that uses quantum mechanical phenomena like superposition and entanglement to process information."
-          }
-        },
-        {
-          "@type": "Question", 
-          "name": "How do quantum computers threaten current password security?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Quantum computers can break current encryption methods through algorithms like Shor's algorithm, which can efficiently factor large numbers and solve discrete logarithm problems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "When will quantum computers pose a real threat?",
-          "acceptedAnswer": {
-            "@type": "Answer", 
-            "text": "Experts estimate that cryptographically relevant quantum computers could emerge within 10-20 years."
+            "text": "Quantum computers can break current encryption methods through algorithms like Shor's algorithm, potentially compromising password security systems within 10-20 years."
           }
         }
       ]
@@ -44,21 +26,7 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Navigation */}
-      <nav className="container mx-auto px-4 sm:px-6 py-4" role="navigation" aria-label="Main navigation">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <Atom className="h-8 w-8 text-cyan-400" />
-            <span className="text-2xl font-bold text-white">QuarkPass</span>
-          </Link>
-          <Link to="/">
-            <Button variant="outline" className="text-white border-cyan-400 hover:bg-cyan-400 hover:text-slate-900">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
-      </nav>
+      <Navigation showBackButton={true} backButtonText="Back to Home" />
 
       {/* FAQ Content */}
       <main className="container mx-auto px-4 sm:px-6 py-12">

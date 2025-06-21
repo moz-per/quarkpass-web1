@@ -261,13 +261,18 @@ const Index = () => {
                     Security Best Practices
                   </Link>
                 </li>
+                <li>
+                  <Link to="/privacy-policy" className="text-slate-400 hover:text-cyan-400 transition-colors text-sm sm:text-base">
+                    Privacy Policy
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-slate-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
             <p className="text-slate-400 text-sm sm:text-base">
-              &copy; 2024 QuarkPass. All rights reserved.
+              &copy; 2025 QuarkPass. All rights reserved.
             </p>
           </div>
         </div>
