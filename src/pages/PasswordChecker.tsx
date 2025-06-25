@@ -1,5 +1,5 @@
-
-import { useState } from "react";
+import React, { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +9,13 @@ import { Link } from "react-router-dom";
 const PasswordChecker = () => {
   const [password, setPassword] = useState("");
   const [analysis, setAnalysis] = useState<any>(null);
+
+  useSEO({
+    title: "Quantum-Resistant Password Generator | Quarkpass",
+    description: "Generate and test passwords safe from future quantum computing attacks. Free, secure, and fast.",
+    keywords: "quantum-resistant password, password security, quantum computing threats, password checker, cybersecurity",
+    canonicalUrl: "https://quarkpass.com/checker"
+  });
 
   const calculateQuantumBreakTime = (entropy: number) => {
     // Grover's algorithm reduces search space by square root
